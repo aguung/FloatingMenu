@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/Theme.FloatingMenu">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_menu_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="TODO"
+        android:src="@drawable/settings"
+        android:visibility="gone"
+        app:backgroundTint="#FF0600"
+        app:layout_constraintBottom_toTopOf="@+id/fab_menu_2"
+        app:layout_constraintStart_toStartOf="@+id/fab_action"
+        app:tint="@color/white" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_menu_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="TODO"
+        android:src="@drawable/play"
+        android:visibility="gone"
+        app:backgroundTint="#FF0600"
+        app:layout_constraintBottom_toTopOf="@+id/fab_menu_1"
+        app:layout_constraintStart_toStartOf="@+id/fab_action"
+        app:tint="@color/white" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_menu_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="TODO"
+        android:src="@drawable/dots"
+        android:visibility="gone"
+        app:backgroundTint="#FF0600"
+        app:layout_constraintBottom_toTopOf="@+id/fab_action"
+        app:layout_constraintStart_toStartOf="@+id/fab_action"
+        app:tint="@color/white" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_action"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="TODO"
+        android:src="@drawable/live"
+        app:backgroundTint="#FF0600"
+        app:elevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:tint="@color/white" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="250dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/bg_rounded_float_menu"
+        android:gravity="bottom"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/fab_action"
+        app:layout_constraintStart_toEndOf="@+id/fab_action"
+        app:layout_constraintTop_toTopOf="@+id/fab_menu_3">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/ll_container_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_label_chat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chat List"
+                android:visibility="gone"
+                android:textColor="@color/white" />
+
+            <ListView
+                android:id="@+id/lv_message"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbarThumbVertical="@drawable/custom_scroll"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_expand_chat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="8dp"
+            app:srcCompat="@drawable/ic_arrow_up" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
